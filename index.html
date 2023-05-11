@@ -1,56 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>My Registration Form</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
     <form id="registration-form">
-      <div>
+      <h1>Registration Form</h1>
+      <div class="form-control">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
       </div>
-      <div>
+      <div class="form-control">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
       </div>
-      <div>
+      <div class="form-control">
         <label for="age">Age:</label>
-        <input type="number" id="age" name="age" min="18" required>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required>
       </div>
-      <div>
+      <div class="form-control">
         <label for="gender">Gender:</label>
         <select id="gender" name="gender" required>
-          <option value="">Select Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
+          <option value="">Select your gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
         </select>
       </div>
-      <div>
+      <div class="form-control">
         <label for="address">Address:</label>
-        <input type="text" id="address" name="address" required>
+        <textarea id="address" name="address" placeholder="Enter your address" required></textarea>
       </div>
-      <div>
-        <label for="mobile">Mobile Number:</label>
-        <input type="tel" id="mobile" name="mobile" pattern="[0-9+]+" required>
+      <div class="form-control">
+        <label for="mobile">Mobile:</label>
+        <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
       </div>
-      <div>
+      <div class="form-control">
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" minlength="8" required>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
       </div>
-      <div>
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" minlength="8" required>
+      <div class="form-control">
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
       </div>
-      <div>
-        <button type="submit">Register</button>
+      <div class="form-control">
+        <button type="submit">Submit</button>
       </div>
     </form>
-    
-    <div id="success-msg" style="display: none; color: green;"></div>
-    
-    <script src="script.js"></script>
-  </body>
+    <div id="success-message" class="hidden">
+      <p>Your registration was successful. Thank you!</p>
+    </div>
+    <div id="error-message" class="hidden">
+      <p>There was a problem with your registration. Please try again.</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
